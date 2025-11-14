@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<header class="page-header">
+  <h1>All Tasks</h1>
+</header>
+
+<section class="section">
+  <table class="task-table">
+    <tr>
+      <th>ID</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Actions</th>
+    </tr>
+
+    {% for t in tasks %}
+    <tr>
+      <td>{{ t.id }}</td>
+      <td>{{ t.title }}</td>
+      <td>{{ t.description }}</td>
+      <td>
+        <a class="btn-edit" href="/edit/{{ t.id }}">Edit</a>
+        <a class="btn-delete" href="/delete/{{ t.id }}">Delete</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+</section>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<header class="page-header">
+  <h1>Notes</h1>
+</header>
+
+<section class="section">
+  <a class="btn" href="/notes/add">+ Add Note</a>
+
+  <table class="task-table">
+    <tr>
+      <th>ID</th>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Actions</th>
+    </tr>
+
+    {% for n in notes %}
+    <tr>
+      <td>{{ n.id }}</td>
+      <td>{{ n.title }}</td>
+      <td>{{ n.content }}</td>
+      <td>
+        <a href="/notes/edit/{{ n.id }}" class="btn-edit">Edit</a>
+        <a href="/notes/delete/{{ n.id }}" class="btn-delete">Delete</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+</section>
+{% endblock %}

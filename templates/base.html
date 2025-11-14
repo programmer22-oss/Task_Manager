@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>{{ title or "MyTask" }}</title>
+
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-inner container">
+
+      <!-- Brand -->
+      <div class="brand">
+        <a href="/">MyTask</a>
+      </div>
+
+      <!-- Desktop Menu -->
+      <div class="nav-links" id="nav-links">
+        <a href="/">Home</a>
+        <a href="/tasks">Tasks</a>
+        <a href="/notes">Notes</a>
+      </div>
+
+
+      <!-- Search Bar -->
+      <div class="nav-search">
+        <input type="text" id="navSearchInput" placeholder="Search tasks or notes...">
+        <span class="nav-search-icon">🔍</span>
+      </div>
+
+
+      <!-- Actions (Theme + User Profile) -->
+      <div class="nav-actions">
+
+        <button id="themeToggle" class="theme-toggle">🌙</button>
+
+        {% if current_user.is_authenticated %}
+        <div class="user-area">
+
+          <img src="/static/profile_pics/{{ current_user.profile_pic }}" class="nav-dp">
+
+          <button id="userBtn" class="user-btn">{{ current_user.username }}</button>
+
+          <div id="userDropdown" class="user-dropdown">
+            <a href="/profile">Profile</a>
+            <a href="/logout">Logout</a>
+          </div>
+        </div>
+
+        {% else %}
+        <a href="/login" class="btn">Login</a>
+        {% endif %}
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button class="hamburger" id="hamburger">☰</button>
+
+    </div>
+  </nav>
+
+
+  <!-- HERO HEADER INCLUDE (Only where needed) -->
+  {% block page_header %}{% endblock %}
+
+  <!-- MAIN CONTENT -->
+  <main class="container main-content">
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <script>
+      Swal.fire({
+        icon: 'info',
+        title: '{{ messages[0] }}',
+        timer: 1800,
+        showConfirmButton: false
+      })
+    </script>
+    {% endif %}
+    {% endwith %}
+
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- GLOBAL FOOTER -->
+  {% include "parts/footer.html" %}
+
+  <script src="/static/js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="section">
+  <h2>Add New Note</h2>
+  <form method="POST">
+    <input type="text" name="title" placeholder="Note Title" required>
+    <textarea name="content" placeholder="Write your note..." required></textarea>
+    <button type="submit">Save Note</button>
+  </form>
+</section>
+{% endblock %}

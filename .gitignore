@@ -1,0 +1,47 @@
+# ---------------------------
+# Python
+# ---------------------------
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+env/
+
+# VS Code / PyCharm
+.vscode/
+.idea/
+
+# Mac / Windows system files
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+*.env
+
+# SQLite database files
+*.db
+instance/
+
+# Flask session files
+*.sqlite
+*.sqlite3
+
+# Logs
+*.log
+
+# Byte-compiled / optimized files
+*.egg-info/
+.eggs/
+
+# User uploaded files
+static/profile_pics/*.png
+static/profile_pics/*.jpg
+static/profile_pics/*.jpeg
+
+# Cache
+__cache__
+.cache/
