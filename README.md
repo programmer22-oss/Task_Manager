@@ -7,8 +7,7 @@ This project is perfect for **interview showcase**, **portfolio**, and **Flask b
 ---
 
 ## 🚀 Live Demo  
-(Add your deployed link here, e.g., Render, Railway, PythonAnywhere)
-=> 
+(Add your deployed link here, e.g., Render, Railway, PythonAnywhere) 
 
 ---
 
