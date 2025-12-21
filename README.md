@@ -70,26 +70,26 @@ This project is perfect for **interview showcase**, **portfolio**, and **Flask b
 
 ## 📂 Project Structure
 
-task_manager/
-├── app.py
-├── requirements.txt
-├── Procfile
-├── LICENSE
-├── .gitignore
-├── templates/
-│ ├── base.html
-│ ├── index.html
-│ ├── tasks.html
-│ ├── notes.html
-│ ├── search.html
-│ ├── profile.html
-│ └── parts/
-│ ├── header.html
-│ └── footer.html
-└── static/
-├── css/style.css
-├── js/script.js
-└── profile_pics/
+  task_manager/
+  ├── app.py
+  ├── requirements.txt
+  ├── Procfile
+  ├── LICENSE
+  ├── .gitignore
+  ├── templates/
+  │ ├── base.html
+  │ ├── index.html
+  │ ├── tasks.html
+  │ ├── notes.html
+  │ ├── search.html
+  │ ├── profile.html
+  │ └── parts/
+  │ ├── header.html
+  │ └── footer.html
+  └── static/
+  ├── css/style.css
+  ├── js/script.js
+  └── profile_pics/
 
 
 
